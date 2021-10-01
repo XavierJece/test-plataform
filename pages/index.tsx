@@ -37,7 +37,12 @@ const Home: NextPage = () => {
           ? navigator.platform.toUpperCase()
           : `Não Indentiquei`;
 
-      if (/MAC/i.test(`${plataform}`)) {
+      if (
+        /MAC/i.test(`${plataform}`) ||
+        /IPHONE/i.test(`${plataform}`) ||
+        /IPOD/i.test(`${plataform}`) ||
+        /IPAD/i.test(`${plataform}`)
+      ) {
         return {
           plataform,
           store: storeLink[PlataformEnum.IOS],
